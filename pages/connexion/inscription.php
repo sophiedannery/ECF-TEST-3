@@ -58,28 +58,42 @@
     <!-- Hero Scene -->
         <div class="hero-scene text-center text-white">
             <div class="hero-scene-content">
-                <h1>Connexion</h1>
+                <h1>Inscription</h1>
             </div>
         </div>
 
         <!-- Formulaire de connexion -->
         <div class="container">
 
-            <form>
+            <form method="POST" action="traitement.php">
                 <div class="form-group mt-3">
-                    <label for="exampleInputEmail1">Identifiant</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse Email" required>
+                    <label for="signin-mail">Identifiant</label>
+                    <input type="email" class="form-control" id="signin-mail" placeholder="Adresse Email" name="signiinmail" required>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="exampleInputPassword1">Mot de passe</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required>
+                    <label for="signin-pwd">Mot de passe</label>
+                    <input type="password" class="form-control" id="signin-pwd" placeholder="" name="signiinpwd" required>
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">Connexion</button>
+                <div class="form-group mt-3">
+                    <label for="signin-conf-pwd">Confirmation du mot de passe</label>
+                    <input type="password" class="form-control" id="signin-conf-pwd" placeholder="" name="signiinconfmail" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="signin-role">Rôle</label>
+                    <select class="form-control" id="signin-role" name="signiinrole">
+                        <option>Vétérinaire</option>
+                        <option>Employé</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3" value="Inscription" name="ok">Créer un nouveau compte</button>
+
             </form>
 
             </br>
             <a href="/index.php">Retour à l'accueil</a>
-            <a href="/pages/connexion/inscription.php">Vous n'avez pas de compte ? Inscrivez-vous ici.</a>
+</br>
+            <a href="/pages/connexion/connexion.php">Vous avez déjà un compte ? Connectez-vous ici.</a>
 
 
         </div>
@@ -147,3 +161,8 @@
         </footer>
       </div>
     </footer>
+
+
+
+</body>
+</html>

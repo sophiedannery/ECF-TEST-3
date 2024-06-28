@@ -50,45 +50,24 @@
         </nav>
     </header>
 
+<main>
 
-    <!-- Contenu -->
-    
-    <main>
-
-    <!-- Hero Scene -->
+        <!-- Hero Scene -->
         <div class="hero-scene text-center text-white">
             <div class="hero-scene-content">
-                <h1>Connexion</h1>
+                <h1>Inscription</h1>
             </div>
         </div>
 
-        <!-- Formulaire de connexion -->
         <div class="container">
-
-            <form>
-                <div class="form-group mt-3">
-                    <label for="exampleInputEmail1">Identifiant</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse Email" required>
-                </div>
-                <div class="form-group mt-3">
-                    <label for="exampleInputPassword1">Mot de passe</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required>
-                </div>
-                <button type="submit" class="btn btn-primary mt-3">Connexion</button>
-            </form>
-
-            </br>
-            <a href="/index.php">Retour à l'accueil</a>
-            <a href="/pages/connexion/inscription.php">Vous n'avez pas de compte ? Inscrivez-vous ici.</a>
-
-
+            <p>Inscription Réussie</p>
+            <a href="/index.php">Retour à l'acceuil</a>
         </div>
+    
 
-        
 
 
-    </main>
-
+</main>
 
 
 
@@ -147,3 +126,8 @@
         </footer>
       </div>
     </footer>
+
+
+
+</body>
+</html>
