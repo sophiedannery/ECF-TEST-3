@@ -23,22 +23,28 @@
 <!-- Nav Bar -->
 <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Arcadia</a>
+            <a class="navbar-brand" href="/index.php">Arcadia</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
-                </li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/services/services.php">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/habitats/habitats.php">Habitats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/contact/contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/connexion/connexion.php">Connexion</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -187,9 +193,11 @@
                     <div class="text-center pt-4">
                         <a href="/pages/avis/avis.php" class="btn btn-primary">Laissez un avis</a>
                     </div>
+                
                     <div class="text-center pt-4">
-                        <a href="/pages/avis/avis_admin.php" class="btn btn-primary">Admin avis</a>
+                        <a href="/pages/avis/admin_avis.php" class="btn btn-primary">Admin avis</a>
                     </div>
+
                 </div>
             </article>
 

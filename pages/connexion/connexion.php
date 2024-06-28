@@ -29,7 +29,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="/index.php">Accueil</a>
                     </li>
@@ -51,84 +51,48 @@
     </header>
 
 
-<!-- Contenu-->
+    <!-- Contenu -->
+    
     <main>
 
+    <!-- Hero Scene -->
         <div class="hero-scene text-center text-white">
             <div class="hero-scene-content">
-                <h1>Votre avis nous intéresse</h1>
+                <h1>Connexion</h1>
             </div>
         </div>
 
-<!-- Formulaire Avis-->
-        <div class="container mt-5">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" required class="form-control mt-3">
+        <!-- Formulaire de connexion -->
+        <div class="container">
+
+            <form>
+                <div class="form-group mt-3">
+                    <label for="exampleInputEmail1">Identifiant</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse Email" required>
                 </div>
-                <div class="form-group">
-                    <label for="message">Commentaire</label>
-                    <textarea name="commentaire" cols="30" rows="5" required id="" class="form-control mt-3"></textarea>
+                <div class="form-group mt-3">
+                    <label for="exampleInputPassword1">Mot de passe</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="envoyer" class="btn btn-primary mt-3">
-                </div>
+                <button type="submit" class="btn btn-primary mt-3">Connexion</button>
             </form>
-        </div>
 
-<!-- Retour à l'accueil-->
-        <div class="container mt-5">
+            </br>
             <a href="/index.php">Retour à l'accueil</a>
+
+
         </div>
+
         
-
-            <!-- Envoi AVIS BDD-->
-            <?php
-            ///On vérifie si les champs ne sont pas vides
-            if (isset($_POST["nom"]) && !empty($_POST["nom"]) && isset($_POST["commentaire"]) && !empty($_POST["commentaire"]))  {
-
-            //Création des variables pour la connexion à la bdd
-                $user = "root";
-                $pwd = "nouveau_mot_de_passe";
-                $db = "mysql:host=localhost;dbname=arcadia_avis_test4";
-
-            //Tentative de connexion avec un try catch
-                try {
-                    $cx = new PDO($db, $user, $pwd) or die();
-                    $cx ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                } catch (PDOException $e) {
-                    echo "Erreur est survenue lors de la connexion : " . $e->getMessage() . "</br>";
-                    die();
-                }
-
-
-                try{
-                    $nom = htmlspecialchars($_POST["nom"]);
-                    $com = htmlspecialchars($_POST["commentaire"]);
-                    $sql = "INSERT INTO commentaires (id, nom, commentaire, date_creation, etat) VALUES (NULL, :nom, :commentaire, NOW(), 0)";
-                    $sth = $cx->prepare($sql);
-                    $sth->execute(array(":nom"=>$nom, ":commentaire"=>$com));
-
-                    // Redirection vers la page de confirmation
-                    header("Location: avis_confirmation.php");
-                    exit();
-
-
-                } catch (PDOException $e) {
-                    echo "Erreur est survenue lors de la connexion : " . $e->getMessage() . "</br>";
-                    die();
-                }
-            }
-            ?>
-
 
 
     </main>
 
 
-<!-- Footer -->
-    <footer>
+
+
+     <!-- Footer -->
+     <footer>
     <div class="container">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
 
@@ -182,14 +146,3 @@
         </footer>
       </div>
     </footer>
-
-
-
-
-
-
-<!-- Inclusion Bootstrap -->
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    
-</body>
-</html>
