@@ -1,0 +1,58 @@
+
+@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import 'custom';
+
+
+// HERO SCENE - BACKGROUND IMAGE
+.hero-scene{
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/Média/lasavane.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 15px;
+
+    .hero-scene-content{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+//IMAGE PAGE ACCUEIL
+
+.img-homepage{
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+}
+
+//AVIS Voir plus/Voir moins
+.hidden{
+    display : none;
+}
+
+
+//AVIS
+.card-title{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.card-subtitle{
+    font-weight: lighter;
+    color: gray;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
