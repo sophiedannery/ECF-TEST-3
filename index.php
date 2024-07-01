@@ -193,15 +193,24 @@
                     <div class="text-center pt-4">
                         <a href="/pages/avis/avis.php" class="btn btn-primary">Laissez un avis</a>
                     </div>
-                
-                    <div class="text-center pt-4">
-                        <a href="/pages/avis/admin_avis.php" class="btn btn-primary">Admin avis</a>
-                    </div>
 
                 </div>
             </article>
 
         </section>
+
+        <div class="container">
+            <a href="/pages/admin-emp-vet/accueil-admin.php">Espace Administrateur</a>
+            <br>
+            <a href="/pages/admin-emp-vet/accueil-vet.php">Espace Vétérinaire</a>
+            <br>
+            <a href="/pages/admin-emp-vet/accueil-emp.php">Espace Employé</a>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        
 
     </main>
 

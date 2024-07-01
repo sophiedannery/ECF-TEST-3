@@ -80,6 +80,10 @@
             $password = $_POST['signuppwd'];
             
             if($email != "" && $password != ""){
+              // création du token
+              $token = bin2hex(random_bytes(32));
+
+
               //connexion à la bdd pour vérifier si mail et mdp correspondent
               $req = $bdd->prepare("SELECT * FROM users WHERE email = :email AND mdp = :password");
               $req->execute([
@@ -89,12 +93,12 @@
               $rep = $req->fetch();
 
               if($rep) {
-                  // c'est ok, demarre une session pour l'user connecté (création de cookie)
-                  setcookie("username", $email, time() + 3600);
-                  setcookie("password", $password, time() + 3600);
+                $bdd->exec("UPDATE users SET token = '$token' WHERE email = '$email' AND mdp = '$password'");
+                setcookie("token", $token, time() + 3600);
+                setcookie("email", $email, time() + 3600);
 
-                  //redirigier vers la page d'acceuil
-                  header("Location: /index.php");
+                  //redirigier vers la page voulu
+                  header("Location: /pages/admin/admin.php");
                   exit();
               } else {
                 //message erreur

@@ -25,7 +25,7 @@ if(isset($_POST['signiinmail']) && isset($_POST['signiinpwd']) && isset($_POST['
     $signiinpwd = $_POST['signiinpwd'];
     $signiinrole = $_POST['signiinrole'];
 
-//Envooyer les données dans la BDD
+//Envoyer les données dans la BDD
     try{
         $requete = $bdd->prepare("INSERT INTO users (email, mdp, role) VALUES(:email, :mdp, :role)");
         $requete->execute(
